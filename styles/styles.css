@@ -102,21 +102,27 @@ body{
     width: 20%;
 }
 .btn{
-    /* display: inline-block;
-    width: 25%; */
-    margin-left: 10px;
-    margin-right: 10px;
+    /* display: inline-block; */
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom:10px ;
 }
 
 .product-anchor{
     text-decoration: none;
 }
 
-/******************end of index.html styling****************************** */
-
-/**style for the product page**/
-.btn{
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom:10px ;
+/* .card-img-size{
+    max-width: 311px;
+    max-height: 320px;
+    width: "310";
+    height: "320";
 }
+.img-card{
+    width: 310px;
+    height: 320px;
+} */
+
+/******************end of index.html styling****************************** */
