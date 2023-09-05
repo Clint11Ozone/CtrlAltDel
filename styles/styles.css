@@ -20,7 +20,7 @@ body{
 }
 
 .navform{
-    margin: 20px;
+    margin: 5px;
 }
 
 .col-green{
@@ -58,9 +58,37 @@ body{
     position: relative;
 }
 
-.section-title{
+/* .section-title{
     width: 25%;
     margin: 25px auto 25px auto;
+} */
+.section-divider {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    display: block;
+    position: relative;
+    text-align: center;
+    /* padding: 1em 0; */
+    margin: 2.5em 0 1em;
+}
+.section-divider::after{
+    content: "";
+    display: block;
+    height: 1px;
+    border-bottom: 1px solid #e6e6e6;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 100%
+}
+.section-divider-text{
+    display: inline-block;
+    padding: 0 1em;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    color: #000;
 }
 
 .card-header{
@@ -68,9 +96,10 @@ body{
 }
 .continue-shopping{
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    
+    /* margin-top: 25px;
+    margin-bottom: 25px; */
+    margin: 25px auto;
+    width: 20%;
 }
 .btn{
     /* display: inline-block;
@@ -84,3 +113,10 @@ body{
 }
 
 /******************end of index.html styling****************************** */
+
+/**style for the product page**/
+.btn{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:10px ;
+}
