@@ -79,4 +79,8 @@ body{
     margin-right: 10px;
 }
 
+.product-anchor{
+    text-decoration: none;
+}
+
 /******************end of index.html styling****************************** */
