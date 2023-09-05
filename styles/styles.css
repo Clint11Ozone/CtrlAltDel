@@ -91,6 +91,10 @@ body{
     color: #000;
 }
 
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .card-header{
     text-align: center;
 }
@@ -114,15 +118,17 @@ body{
     text-decoration: none;
 }
 
-/* .card-img-size{
-    max-width: 311px;
-    max-height: 320px;
-    width: "310";
-    height: "320";
-}
-.img-card{
+.card-img-size{
+    /* max-width: 311px; */
+    /* max-height: 320px; */
     width: 310px;
     height: 320px;
-} */
+}
+.card-img-top{
+    /* width: 310px; */
+    /* height: 320px; */
+    max-width: 100%;
+    max-height: 100%;
+}
 
 /******************end of index.html styling****************************** */
