@@ -116,8 +116,8 @@
                     <input type="file" name="itemImages" id="itemImages" accept="image/*" multiple>
                 </div>    -->
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Upload your images</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <label for="itemImages" class="form-label">Upload your images</label>
+                    <input class="form-control" type="file" id="itemImages" accept="image/*" multiple>
                   </div>                    
             
             </div>
@@ -148,16 +148,18 @@
                     <textarea class="form-control" id="itemDescription" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="itemType" class="form-label">Item type</label>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Top</option>
-                        <option value="2">Pants</option>
-                        <option value="3">shoe</option>
-                    </select>
+                    <div class="row">
+                      <div class="col">
+                        <label for="itemType" class="form-label">Item type</label>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <!-- <option selected>Open this select menu</option> -->
+                            <option value="1">Top</option>
+                            <option value="2">Pants</option>
+                            <option value="3">shoe</option>
+                        </select>
 
-                    <label for="itemSize" class="form-label">Item size</label>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <label for="itemSize" class="form-label">Item size</label>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
                         <!-- <option selected>Open this select menu</option> -->
                         <option value="1">XXS</option>
                         <option value="2">XS</option>
@@ -167,7 +169,13 @@
                         <option value="3">XL</option>
                         <option value="3">XXL</option>
                     </select>
+                  </div>
+                  <div class="col">
+                    <label for="itemCondition" class="form-label">Item Condition</label>
+                    <input class="form-control" id="itemCondition" type="NUMBER" MIN="0" MAX="5" VALUE="5" SIZE="6">
+                  </div>
                 </div>
+              </div>
 
                 <div class="mb-3">
                     <button type="submit" class="btn btn-outline-success b-3">Submit</button>
