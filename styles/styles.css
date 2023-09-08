@@ -119,8 +119,6 @@ body{
 }
 
 .card-img-size{
-    /* max-width: 311px; */
-    /* max-height: 320px; */
     width: 310px;
     height: 320px;
 }
@@ -132,3 +130,16 @@ body{
 }
 
 /******************end of index.html styling****************************** */
+
+/*****product page styling*****/
+.carousel-size{
+    width: 500px;
+    height: 500px;
+}
+.product-img-size{
+    width: 500px;
+    height: 500px;
+}
+.product-id{
+    display:none;
+}
