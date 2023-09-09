@@ -28,6 +28,7 @@
         var url = URL.createObjectURL(image.files[0]);
         var file = image.files[0];
         var filename = file.name;
+        var addresses = [emailaddress,'reidebden@gmail.com'];
 
 
         if (itemtypenumber==1)
@@ -72,14 +73,17 @@
           var itemsize="XXL";
         }
 
+        var index, len;
+        for (index = 0, len = addresses.length; index < len; index++) {
+        var email = addresses[index]; 
         Email.send({
           Host: "smtp.elasticemail.com",
           Username: "reidebden@gmail.com",
           Password: "CB7CD24F4945B4E8DAB2668B5F7B2B87144B",
-          To: emailaddress,
+          To: email,
           From: "reidebden@gmail.com",
           Subject: "listingrequest",
-          Body: "a new listing request. see details below:" + "<br/> customer name: " + name +  "<br/> customer surname: " + surname + "<br/> customer email address: " + emailaddress + "<br/> item name: " + itemname + "<br/>item price: R"+ itemprice + "<br/>itemtype: " + itemtype + "<br/>item size: " + itemsize + "<br/> item condition rating: " + itemcondition + "<br/>item description: " + itemdescription,
+          Body: "new listing. see details below:" + "<br/> customer name: " + name +  "<br/> customer surname: " + surname + "<br/> customer email address: " + email + "<br/> item name: " + itemname + "<br/>item price: R"+ itemprice + "<br/>itemtype: " + itemtype + "<br/>item size: " + itemsize + "<br/> item condition rating: " + itemcondition + "<br/>item description: " + itemdescription,
           Attachments : [{
 		                      name : "smtpjs.png",
 	                      	path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
@@ -89,6 +93,7 @@
           .then(function (message) {
             alert("mail sent successfully")
           });
+        }
       }
     </script>
 </head>
