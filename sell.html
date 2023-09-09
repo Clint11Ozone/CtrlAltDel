@@ -8,6 +8,89 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <title>Sell</title>
+
+    <!--email function-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+     <script type="text/javascript">
+
+      function sendEmail() {
+        var name = document.getElementById("sellName").value;
+        var surname = document.getElementById("sellSurname").value;
+        var emailaddress = document.getElementById("sellerEmail1").value;
+        var itemname = document.getElementById("itemName").value;
+        var itemdescription = document.getElementById("itemDescription").value;
+        var itemtypenumber = document.getElementById("selecttype").value;
+        var itemsizenumber = document.getElementById("selectsize").value;
+        var itemcondition = document.getElementById("itemCondition").value;
+        var itemprice = document.getElementById("itemPrice").value;
+        var image = document.getElementById("itemImages");
+        var url = URL.createObjectURL(image.files[0]);
+        var file = image.files[0];
+        var filename = file.name;
+
+
+        if (itemtypenumber==1)
+        {
+          var itemtype="top";
+        }
+        else if (itemtypenumber==2)
+        {
+          var itemtype="pants";
+        }
+        else if (itemtypenumber==3)
+        {
+          var itemtype="shoe";
+        }
+
+        if (itemsizenumber==1)
+        {
+          var itemsize="XXS"
+        }
+        else if (itemsizenumber==2)
+        {
+          var itemsize="XS";
+        }
+        else if (itemsizenumber==3)
+        {
+          var itemsize="S";
+        }
+        else if (itemsizenumber==4)
+        {
+          var itemsize="M";
+        }
+        else if (itemsizenumber==5)
+        {
+          var itemsize="L";
+        }
+        else if (itemsizenumber==6)
+        {
+          var itemsize="XL";
+        }
+        else if (itemsizenumber==7)
+        {
+          var itemsize="XXL";
+        }
+
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "reidebden@gmail.com",
+          Password: "CB7CD24F4945B4E8DAB2668B5F7B2B87144B",
+          To: emailaddress,
+          From: "reidebden@gmail.com",
+          Subject: "listingrequest",
+          Body: "a new listing request. see details below:" + "<br/> customer name: " + name +  "<br/> customer surname: " + surname + "<br/> customer email address: " + emailaddress + "<br/> item name: " + itemname + "<br/>item price: R"+ itemprice + "<br/>itemtype: " + itemtype + "<br/>item size: " + itemsize + "<br/> item condition rating: " + itemcondition + "<br/>item description: " + itemdescription,
+          Attachments : [{
+		                      name : "smtpjs.png",
+	                      	path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+	
+                      	}]
+        })
+          .then(function (message) {
+            alert("mail sent successfully")
+          });
+      }
+    </script>
 </head>
 <body>
 
@@ -118,7 +201,7 @@
                 <div class="mb-3">
                     <label for="itemImages" class="form-label">Upload your images</label>
                     <input class="form-control" type="file" id="itemImages" accept="image/*" multiple>
-                  </div>                    
+                  </div>              
             
             </div>
             <div class="col-lg-6 col-md-12"> <!---2nd column gets the info of the sell and the item for sale-->
@@ -151,7 +234,7 @@
                     <div class="row">
                       <div class="col">
                         <label for="itemType" class="form-label">Item type</label>
-                        <select class="form-select form-select-sm" aria-label="Small select example">
+                        <select id= "selecttype" class="form-select form-select-sm" aria-label="Small select example">
                             <!-- <option selected>Open this select menu</option> -->
                             <option value="1">Top</option>
                             <option value="2">Pants</option>
@@ -159,15 +242,15 @@
                         </select>
 
                         <label for="itemSize" class="form-label">Item size</label>
-                        <select class="form-select form-select-sm" aria-label="Small select example">
+                        <select id= "selectsize" class="form-select form-select-sm" aria-label="Small select example">
                         <!-- <option selected>Open this select menu</option> -->
                         <option value="1">XXS</option>
                         <option value="2">XS</option>
                         <option value="3">S</option>
-                        <option value="1">M</option>
-                        <option value="2">L</option>
-                        <option value="3">XL</option>
-                        <option value="3">XXL</option>
+                        <option value="4">M</option>
+                        <option value="5">L</option>
+                        <option value="6">XL</option>
+                        <option value="7">XXL</option>
                     </select>
                   </div>
                   <div class="col">
@@ -181,7 +264,9 @@
               </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-outline-success b-3">Submit</button>
+                  <form method="post">
+                    <input type="button" value="Submit" class="btn btn-outline-success b-3"
+                        onclick="sendEmail()" />
                 </div>
 
             </div>
